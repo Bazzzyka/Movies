@@ -1,5 +1,6 @@
 import React from 'react';
-import MovieCard, { IMovieData } from '../movieCard';
+import { IMovieData } from '../movieCard';
+import MovieInfo from '../movieInfo';
 
 class List extends React.Component<{ moviesData: IMovieData[] }> {
   public render() {
@@ -7,7 +8,7 @@ class List extends React.Component<{ moviesData: IMovieData[] }> {
       <table>
         <thead>
           {this.props.moviesData.map(movieData => {
-            return <MovieCard movieData={movieData} />
+            return <MovieInfo movieData={movieData} />
           })}
         </thead>
       </table>
