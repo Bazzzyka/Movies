@@ -7,7 +7,6 @@ export interface IMovieData {
   rating: number;
   genres: string[];
   description: string;
-  language: string;
   coverImageSrc: string;
 }
 

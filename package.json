@@ -11,6 +11,7 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "jsx": "^0.9.89",
+    "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -50,8 +51,11 @@
     }
   },
   "devDependencies": {
+    "css-loader": "^5.2.4",
     "husky": "^5.2.0",
+    "less-loader": "^8.1.1",
     "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0"
+    "pretty-quick": "^3.1.0",
+    "style-loader": "^2.0.0"
   }
 }

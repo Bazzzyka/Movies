@@ -1,17 +1,16 @@
 import React from 'react';
 import { IMovieData } from '../movieCard';
 import MovieInfo from '../movieInfo';
+import styles from './list.module.scss';
 
 class List extends React.Component<{ moviesData: IMovieData[] }> {
   public render() {
     return (
-      <table>
-        <thead>
-          {this.props.moviesData.map(movieData => {
-            return <MovieInfo movieData={movieData} />
+      <div className={styles.list}>
+        {this.props.moviesData.map(movieData => {
+            return <MovieInfo key={movieData.id} movieData={movieData} />
           })}
-        </thead>
-      </table>
+      </div>
     );
   }
 }
