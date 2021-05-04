@@ -7,7 +7,7 @@ import commonStyles from '../components.module.scss';
 
 const App = () => { 
   return (
-    <div>
+    <div className={commonStyles.column}>
       <Header />
       <div className={commonStyles.row}>
         <HiddenMovies />
