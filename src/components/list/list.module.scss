@@ -6,5 +6,12 @@
 
 .listRow {
   margin: 20px;
+  padding-right: 10px;
+
+  &:hover {
+    filter: brightness(110%);
+    box-shadow: 0px 0px 20px 2px #c4c4c4;
+    cursor: pointer;
+  }
 }
 
