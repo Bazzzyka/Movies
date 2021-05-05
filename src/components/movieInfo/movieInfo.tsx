@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { IMovieData } from '../movieCard';
 import styles from './movieInfo.module.scss';
 import commonStyles from '../components.module.scss';
+import { hide, show } from '../../redux/actions';
 
-class MovieInfo extends React.Component<{ movieData: IMovieData }, {}> {
+class MovieInfo extends React.Component<{ movieData: IMovieData }, { isVisible: boolean }> {
   public render() {
     const { id, title, year, rating, genres, description, coverImageSrc } = this.props.movieData;
 
@@ -21,6 +23,20 @@ class MovieInfo extends React.Component<{ movieData: IMovieData }, {}> {
       </div>
     );
   }
-}
+};
 
-export default MovieInfo;
+const mapStateToProps = (state: any) => ({
+  // isVisible: state.hiddenMovies.find(item.id)
+});
+
+const mapDispatchToProps = {
+  hide,
+  show
+};
+
+// const mapDispatchToProps = (dispatch: any) => ({
+//   hide: () => dispatch(hide()),
+//   show: () => dispatch(show())
+// });
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieInfo);
