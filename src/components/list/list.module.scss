@@ -1,19 +1,11 @@
 .list {
-  margin: 10px 0;
   width: 100%;
-  max-height: calc(100% - 100px);
+  height: 100%;
+  max-height: calc(100% - 90px);
   overflow-y: scroll;
 }
 
 .listRow {
   margin: 20px;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  } 
 }
 
