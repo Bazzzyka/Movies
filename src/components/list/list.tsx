@@ -12,36 +12,6 @@ class List extends React.Component<{ moviesData: IMovieData[] }> {
               <MovieInfo key={movieData.id} movieData={movieData} />
             </div>
           })}
-        {this.props.moviesData.map(movieData => {
-            return <div className={styles.listRow}>
-            <MovieInfo key={movieData.id} movieData={movieData} />
-          </div>
-          })}
-        {this.props.moviesData.map(movieData => {
-            return <div className={styles.listRow}>
-            <MovieInfo key={movieData.id} movieData={movieData} />
-          </div>
-          })}
-        {this.props.moviesData.map(movieData => {
-            return <div className={styles.listRow}>
-            <MovieInfo key={movieData.id} movieData={movieData} />
-          </div>
-          })}
-        {this.props.moviesData.map(movieData => {
-            return <div className={styles.listRow}>
-            <MovieInfo key={movieData.id} movieData={movieData} />
-          </div>
-          })}
-        {this.props.moviesData.map(movieData => {
-            return <div className={styles.listRow}>
-            <MovieInfo key={movieData.id} movieData={movieData} />
-          </div>
-          })}
-        {this.props.moviesData.map(movieData => {
-            return <div className={styles.listRow}>
-            <MovieInfo key={movieData.id} movieData={movieData} />
-          </div>
-          })}
       </div>
     );
   }

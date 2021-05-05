@@ -10,7 +10,7 @@ class MovieInfo extends React.Component<{ movieData: IMovieData }, {}> {
     return (
       <div className={commonStyles.row}>
         <img src={coverImageSrc} className={styles.img} />
-        <div className={commonStyles.column}>
+        <div className={`${commonStyles.column} ${styles.infoContainer}`}>
           <div className={`${styles.headerRow} ${commonStyles.row}`}>
             <h2>{title} ({year})</h2>
             <div>IMDB rating: {rating}</div>
