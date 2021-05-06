@@ -3,8 +3,12 @@ img {
   max-width: 100px;
 }
 
-.headerRow {
+.headerRow,
+.subHeaderRow {
   justify-content: space-between;
+}
+
+.headerRow {
   align-items: baseline;
   line-height: 32px;
 }
@@ -19,4 +23,22 @@ h2 {
 
 p {
   margin: 5px 0;
+}
+
+.iconVisibility {
+  width: 24px;
+  height: 24px;
+  opacity: 0.8;
+
+  &[data-visibile="true"] {
+    background-image: url("../../icons/visibility_off_white.svg");
+  }
+
+  &[data-visibile="false"] {
+    background-image: url("../../icons/visibility_on_white.svg");
+  }
+
+  &:hover {
+    opacity: 1;
+  }
 }

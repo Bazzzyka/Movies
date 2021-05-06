@@ -5,7 +5,7 @@ import styles from './movieInfo.module.scss';
 import commonStyles from '../components.module.scss';
 import { hide, show } from '../../redux/actions';
 
-class MovieInfo extends React.Component<{ movieData: IMovieData }, { isVisible: boolean }> {
+class MovieInfo extends React.Component<{ movieData: IMovieData, isVisible: boolean, hide: any, show: any }> {
   public render() {
     const { id, title, year, rating, genres, description, coverImageSrc } = this.props.movieData;
 
@@ -17,7 +17,13 @@ class MovieInfo extends React.Component<{ movieData: IMovieData }, { isVisible: 
             <h2>{title} ({year})</h2>
             <div>IMDB rating: {rating}</div>
           </div>
-          <p>{genres.join(', ')}</p>
+          <div className={`${commonStyles.row} ${styles.subHeaderRow}`}>
+            <div>{genres.join(', ')}</div>
+            <div className={styles.iconVisibility} 
+              data-visibile={this.props.isVisible.toString()} 
+              onClick={this.props.isVisible ? this.props.hide : this.props.show}>
+            </div>
+          </div>
           <p>{description}</p>
         </div> 
       </div>
@@ -25,18 +31,13 @@ class MovieInfo extends React.Component<{ movieData: IMovieData }, { isVisible: 
   }
 };
 
-const mapStateToProps = (state: any) => ({
-  // isVisible: state.hiddenMovies.find(item.id)
+const mapStateToProps = (state: any, props: any) => ({
+  isVisible: !state.hiddenMovies.ids.has(props.movieData.id)
 });
 
-const mapDispatchToProps = {
-  hide,
-  show
-};
-
-// const mapDispatchToProps = (dispatch: any) => ({
-//   hide: () => dispatch(hide()),
-//   show: () => dispatch(show())
-// });
+const mapDispatchToProps = (dispatch: any, props: any) => ({
+  hide: () => dispatch(hide(props.movieData.id)),
+  show: () => dispatch(show(props.movieData.id))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieInfo);

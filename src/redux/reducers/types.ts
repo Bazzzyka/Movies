@@ -1,3 +1,3 @@
 export interface IHiddenMovies {
-  ids: string[];
+  ids: Set<number>;
 }

@@ -8,8 +8,8 @@ class List extends React.Component<{ moviesData: IMovieData[] }> {
     return (
       <div className={styles.list}>
         {this.props.moviesData.map(movieData => {
-            return <div className={styles.listRow}>
-              <MovieInfo key={movieData.id} movieData={movieData} />
+            return <div className={styles.listRow} key={movieData.id}>
+              <MovieInfo movieData={movieData} />
             </div>
           })}
       </div>

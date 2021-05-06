@@ -1,9 +1,8 @@
-// import { Reducer } from "redux";
 import { IHiddenMovies } from "./types";
 import { HIDE, SHOW } from '../constants';
 
 const init: IHiddenMovies = {
-  ids: []
+  ids: new Set<number>()
 };
 
 export default (state: IHiddenMovies = init, action: any): IHiddenMovies => {
@@ -11,12 +10,10 @@ export default (state: IHiddenMovies = init, action: any): IHiddenMovies => {
   
   switch (action.type) {
     case HIDE:
-      result.ids.push(action.payload);
+      result.ids.add(action.id);
       return result;
     case SHOW:
-      let index = result.ids.indexOf(action.payload);
-
-      result.ids.splice(index, 1);
+      result.ids.delete(action.id);
       return result;
     default:
       return state;
