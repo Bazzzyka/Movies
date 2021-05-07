@@ -1,12 +1,39 @@
-.header {
-  margin: 0;
+.container {
   position: sticky;
   top: 0;
+  align-items: center;
   height: 100px;
   line-height: 90px;
   text-align: center;
   background-color: #444857;
   box-shadow: 0px 0px 20px 2px #000000;
+}
+
+.logo,
+.favorites {
+  opacity: 0.8;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+}
+
+.header {
+  margin: 0;
+  flex-basis: 100%;
   color: #c9e4ff;
   cursor: default;
+}
+
+.favorites {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  fill: white;
 }
