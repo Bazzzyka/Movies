@@ -28,6 +28,10 @@
   flex-basis: 100%;
   color: #c9e4ff;
   cursor: default;
+
+  &[data-wide-letters="true"] {
+    letter-spacing: 1.5px;
+  }
 }
 
 .favorites {

@@ -7,18 +7,18 @@ import commonStyles from '../components.module.scss';
 import appStyles from './app.module.scss';
 
 const App = () => {
-  let [isFavouritesVisible, setIsFavouritesVisible] = useState(false);
+  let [isFavoritesVisible, setIsFavoritesVisible] = useState(false);
 
   const onListClick = (): void => {
-    isFavouritesVisible = !isFavouritesVisible;
+    isFavoritesVisible = !isFavoritesVisible;
   }; 
 
   return (
     <div className={`${commonStyles.column} ${appStyles.bodyContainer}`}>
-      <Header onListClick={() => setIsFavouritesVisible(false)} onFavoriteListClick={() => setIsFavouritesVisible(true)} />
+      <Header onListClick={() => setIsFavoritesVisible(false)} onFavoriteListClick={() => setIsFavoritesVisible(true)} isFavoritesVisible={isFavoritesVisible} />
       <div className={`${commonStyles.row} ${appStyles.listContainer}`}>
-        <List moviesData={DATA} isVisible={!isFavouritesVisible} />
-        <FavoriteMovies isVisible={isFavouritesVisible} />
+        <List moviesData={DATA} isVisible={!isFavoritesVisible} />
+        <FavoriteMovies isVisible={isFavoritesVisible} />
       </div>
     </div>
   );
