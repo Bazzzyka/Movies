@@ -34,7 +34,7 @@ class MovieInfo extends React.Component<{ movieData: IMovieData, isFavorite: boo
 };
 
 const mapStateToProps = (state: any, props: any) => ({
-  isFavorite: state.hiddenMovies.ids.has(props.movieData.id)
+  isFavorite: state.favoriteMovies.ids.has(props.movieData.id)
 });
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({

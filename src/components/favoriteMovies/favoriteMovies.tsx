@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { IMovieData } from '../movieCard';
 import MovieInfo from '../movieInfo';
-import styles from './list.module.scss';
+import { IMovieData } from '../movieCard';
+import styles from '../list/list.module.scss';
+import { favoriteMoviesDataSelector } from '../../redux/reducers/selectors';
 
-class List extends React.Component<{ moviesData: IMovieData[], isVisible: boolean }> {
-  public render() {
+class FavoriteMovies extends React.Component<{ moviesData: IMovieData[], isVisible: boolean }> {
+  render() {
     return (
       <div className={styles.list} data-visible={this.props.isVisible}>
         {this.props.moviesData.map(movieData => {
@@ -19,9 +20,9 @@ class List extends React.Component<{ moviesData: IMovieData[], isVisible: boolea
 }
 
 const mapStateToProps = (state: any, props: any) => ({
-  moviesData: state.movies
+  moviesData: favoriteMoviesDataSelector(state)
 });
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({ });
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(FavoriteMovies);
