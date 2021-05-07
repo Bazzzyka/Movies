@@ -1,4 +1,4 @@
-import { HIDE, SHOW } from './constants';
+import { REMOVE_FROM_FAVORITE, ADD_TO_FAVORITE } from './constants';
 
-export const hide = (id: number) => ({ type: HIDE, id });
-export const show = (id: number) => ({ type: SHOW, id });
+export const removeFromFavorite = (id: number) => ({ type: REMOVE_FROM_FAVORITE, id });
+export const addToFavorite = (id: number) => ({ type: ADD_TO_FAVORITE, id });

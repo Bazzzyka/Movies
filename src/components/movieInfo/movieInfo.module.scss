@@ -30,12 +30,12 @@ p {
   height: 24px;
   opacity: 0.8;
 
-  &[data-visibile="true"] {
-    background-image: url("../../icons/visibility_off_white.svg");
+  &[data-favorite="true"] {
+    fill: rgb(255, 255, 133);;
   }
 
-  &[data-visibile="false"] {
-    background-image: url("../../icons/visibility_on_white.svg");
+  &[data-favorite="false"] {
+    fill: white;
   }
 
   &:hover {

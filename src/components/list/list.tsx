@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { IMovieData } from '../movieCard';
 import MovieInfo from '../movieInfo';
 import styles from './list.module.scss';
@@ -17,4 +18,10 @@ class List extends React.Component<{ moviesData: IMovieData[] }> {
   }
 }
 
-export default List;
+const mapStateToProps = (state: any, props: any) => ({
+  moviesData: state.movies
+});
+
+const mapDispatchToProps = (dispatch: any, props: any) => ({ });
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);

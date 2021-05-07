@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { IMovieData } from '../movieCard';
+import { removeFromFavorite, addToFavorite } from '../../redux/actions';
+import { ReactComponent as Star } from '../../icons/star.svg';
 import styles from './movieInfo.module.scss';
 import commonStyles from '../components.module.scss';
-import { hide, show } from '../../redux/actions';
 
-class MovieInfo extends React.Component<{ movieData: IMovieData, isVisible: boolean, hide: any, show: any }> {
+class MovieInfo extends React.Component<{ movieData: IMovieData, isFavorite: boolean, removeFromFavorite: any, addToFavorite: any }> {
   public render() {
     const { id, title, year, rating, genres, description, coverImageSrc } = this.props.movieData;
 
@@ -19,10 +20,11 @@ class MovieInfo extends React.Component<{ movieData: IMovieData, isVisible: bool
           </div>
           <div className={`${commonStyles.row} ${styles.subHeaderRow}`}>
             <div>{genres.join(', ')}</div>
-            <div className={styles.iconVisibility} 
-              data-visibile={this.props.isVisible.toString()} 
-              onClick={this.props.isVisible ? this.props.hide : this.props.show}>
-            </div>
+            <Star className={styles.iconVisibility}
+              data-favorite={this.props.isFavorite.toString()} 
+              onClick={this.props.isFavorite ? this.props.removeFromFavorite : this.props.addToFavorite}
+              title={this.props.isFavorite ? "Remove from favorites" : "Add to favorites"}>
+            </Star>
           </div>
           <p>{description}</p>
         </div> 
@@ -32,12 +34,12 @@ class MovieInfo extends React.Component<{ movieData: IMovieData, isVisible: bool
 };
 
 const mapStateToProps = (state: any, props: any) => ({
-  isVisible: !state.hiddenMovies.ids.has(props.movieData.id)
+  isFavorite: state.hiddenMovies.ids.has(props.movieData.id)
 });
 
 const mapDispatchToProps = (dispatch: any, props: any) => ({
-  hide: () => dispatch(hide(props.movieData.id)),
-  show: () => dispatch(show(props.movieData.id))
+  removeFromFavorite: () => dispatch(removeFromFavorite(props.movieData.id)),
+  addToFavorite: () => dispatch(addToFavorite(props.movieData.id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieInfo);

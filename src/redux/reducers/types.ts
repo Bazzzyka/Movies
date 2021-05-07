@@ -1,3 +1,3 @@
-export interface IHiddenMovies {
+export interface IFavoriteMovies {
   ids: Set<number>;
 }
