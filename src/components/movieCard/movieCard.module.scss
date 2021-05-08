@@ -9,37 +9,112 @@
     display: block;
   }
 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #a1b8d0 #2b3144;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #2b3144;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #a1b8d0;
+    border-radius: 5px;
+  }
+
   .background {
+    @include commonStyles.flex();
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(90, 90, 90, 0.5);
-
-    .header {
-      @include commonStyles.flex();
-    }
+    background-color: rgba(90, 90, 90, 0.7);
 
     .card {
       position: relative;
-      margin: 5vh 10vw;
-      width: 80wh;
-      height: 90vh;
+      margin: auto;
+      padding-bottom: 30px;
+      width: 80vw;
+      height: 60vh;
       background-color: rgb(43, 49, 68);
       box-shadow: 0px 0px 20px 2px #c4c4c4; 
 
-      .closeButton {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: 30px;
-        height: 30px;
-        opacity: 0.8;
-        cursor: pointer;
+      .header {
+        @include commonStyles.flex();
+        height: 70px;
 
-        &:hover {
-          opacity: 1;
+        h2 {
+          flex-basis: 100%;
+          text-align: center;
+          cursor: default;
+        }
+
+        .closeButton {
+          margin: 5px 5px 0 0;
+          width: 30px;
+          height: 30px;
+          opacity: 0.8;
+          cursor: pointer;
+  
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .body {
+        @include commonStyles.flex(column, flex-start);
+        height: calc(100% - 70px);
+        padding: 0 30px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        cursor: default;
+
+        .infoRow {
+          @include commonStyles.flex();
+        }
+
+        .mainInfoRow {
+          @include commonStyles.flex(row, flex-start);
+          width: 100%;
+          flex-wrap: wrap;
+        }
+
+        .infoColumn {
+          @include commonStyles.flex(column, space-between);
+          min-height: 180px;
+          padding: 10px;
+
+          h4 {
+            margin: 0 15px 0 0;
+            min-width: 90px;
+            letter-spacing: 1px;
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+
+        img {
+          margin-right: 10px;
+          margin-bottom: 20px;
+          max-width: 200px;
+          max-height: 230px;
         }
       }
     }

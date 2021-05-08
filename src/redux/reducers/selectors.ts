@@ -12,10 +12,8 @@ export const favoriteMoviesDataSelector = createSelector(
     let result: IMovieData[];
     let favoriteMoviesIds: number[] = Array.from(favoriteMovies.ids);
 
-    //TO FIX: id === 0 doesn't work
     result = movies.filter((item: IMovieData) => { 
       return favoriteMoviesIds.find((id: number) => {
-        // debugger
         return item.id === id;
       })
     });
@@ -33,6 +31,9 @@ export const cardSelector = createSelector(
       year: 0,
       rating: 0,
       genres: [],
+      cast: [],
+      director: '',
+      producer: '',
       description: '',
       coverImageSrc: ''
     };

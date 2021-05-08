@@ -10,6 +10,9 @@ const initMovieCardData: IMovieData = {
   year: 0,
   rating: 0,
   genres: [],
+  cast: [],
+  director: '',
+  producer: '',
   description: '',
   coverImageSrc: ''
 };

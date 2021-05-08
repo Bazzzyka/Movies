@@ -2,51 +2,51 @@
 
 .container {
  @include commonStyles.flex();
-}
 
-img {
-  margin-right: 10px;
-  max-width: 100px;
-}
+ h2 {
+    margin: 0;
+  }
 
-.headerRow,
-.subHeaderRow {
- @include commonStyles.flex(row, space-between);
- width: 100%;
-}
+  p {
+    margin: 5px 0;
+  }
 
-.headerRow {
-  align-items: baseline;
-  line-height: 32px;
-}
+  img {
+    margin-right: 10px;
+    max-width: 100px;
+  }
 
-.infoContainer {
- @include commonStyles.flex(column);
+  .headerRow,
+  .subHeaderRow {
+  @include commonStyles.flex(row, space-between);
   width: 100%;
-}
-
-h2 {
-  margin: 0;
-}
-
-p {
-  margin: 5px 0;
-}
-
-.iconVisibility {
-  width: 24px;
-  height: 24px;
-  opacity: 0.8;
-
-  &[data-favorite="true"] {
-    fill: rgb(255, 255, 133);;
   }
 
-  &[data-favorite="false"] {
-    fill: white;
+  .headerRow {
+    align-items: baseline;
+    line-height: 32px;
   }
 
-  &:hover {
-    opacity: 1;
+  .infoContainer {
+  @include commonStyles.flex(column);
+    width: 100%;
+  }
+
+  .iconVisibility {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+
+    &[data-favorite="true"] {
+      fill: rgb(255, 255, 133);;
+    }
+
+    &[data-favorite="false"] {
+      fill: white;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
