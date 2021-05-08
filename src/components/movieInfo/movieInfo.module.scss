@@ -1,3 +1,9 @@
+@use '../components.module.scss' as commonStyles;
+
+.container {
+ @include commonStyles.flex();
+}
+
 img {
   margin-right: 10px;
   max-width: 100px;
@@ -5,7 +11,8 @@ img {
 
 .headerRow,
 .subHeaderRow {
-  justify-content: space-between;
+ @include commonStyles.flex(row, space-between);
+ width: 100%;
 }
 
 .headerRow {
@@ -14,6 +21,7 @@ img {
 }
 
 .infoContainer {
+ @include commonStyles.flex(column);
   width: 100%;
 }
 

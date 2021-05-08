@@ -4,7 +4,6 @@ import { IMovieData } from '../movieCard';
 import { removeFromFavorite, addToFavorite, openCard } from '../../redux/actions';
 import { ReactComponent as Star } from '../../icons/star.svg';
 import styles from './movieInfo.module.scss';
-import commonStyles from '../components.module.scss';
 
 interface IProps {
   movieData: IMovieData;
@@ -25,14 +24,14 @@ class MovieInfo extends React.Component<{ movieData: IMovieData, isFavorite: boo
     const { title, year, rating, genres, description, coverImageSrc } = this.props.movieData;
 
     return (
-      <div className={commonStyles.row} onClick={this.props.openCard}>
+      <div className={styles.container} onClick={this.props.openCard}>
         <img src={coverImageSrc} className={styles.img} />
-        <div className={`${commonStyles.column} ${styles.infoContainer}`}>
-          <div className={`${styles.headerRow} ${commonStyles.row}`}>
+        <div className={styles.infoContainer}>
+          <div className={styles.headerRow}>
             <h2>{title} ({year})</h2>
             <div>IMDB rating: {rating}</div>
           </div>
-          <div className={`${commonStyles.row} ${styles.subHeaderRow}`}>
+          <div className={styles.subHeaderRow}>
             <div>{genres.join(', ')}</div>
             <Star className={styles.iconVisibility}
               data-favorite={this.props.isFavorite.toString()} 

@@ -1,7 +1,11 @@
+@use '../components.module.scss' as commonStyles;
+
 .bodyContainer {
+  @include commonStyles.flex(column);
   height: 100%;
 }
 
 .listContainer {
+  @include commonStyles.flex();
   height: calc(100% - 90px);
 }

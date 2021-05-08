@@ -1,7 +1,10 @@
+@use '../components.module.scss' as commonStyles;
+
 .container {
+  @include commonStyles.flex(row, center, center);
   position: sticky;
   top: 0;
-  align-items: center;
+  width: 100%;
   line-height: 90px;
   text-align: center;
   background-color: #444857;
