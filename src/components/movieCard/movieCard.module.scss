@@ -1,6 +1,8 @@
 @use '../components.module.scss' as commonStyles;
 
 .container {
+  @include commonStyles.fade(fadeIn, ease, 0.3s, 1, forward);
+  
   &[data-visible="false"] {
     display: none;
   }

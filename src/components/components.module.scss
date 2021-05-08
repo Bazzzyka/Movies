@@ -1,22 +1,48 @@
-@mixin flex ($direction: row, $justify: center, $align: flex-start){
+@mixin flex ($direction: row, $justify: center, $align: flex-start) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
 }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@mixin fade($fade, $timing, $length, $count, $fill: none) { 
+  animation: $fade $timing $length;
+  animation-iteration-count: $count; 
+  animation-fill-mode: $fill; 
+} 
+@keyframes fadeIn { 
+  0% { opacity: 0; } 
+  100% { opacity: 1; } 
+} 
+@keyframes fadeOut { 
+  0% { opacity: 1; } 
+  100% { opacity: 0; } 
 }
 
-.column {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+@mixin orientation($orientation: landscape) {
+  
+}
+
+// width scale for phone
+$phone-min-width: 320px !default;
+$phone-max-width: 504px !default;
+
+// height scale for phone
+$phone-min-height: 346px !default;
+$phone-max-height: 695px !default;
+
+// Desktop Scale
+$desktop-min-height: 695px !default;
+$desktop-max-height: 1280px !default;
+
+@mixin phone(){
+  @media screen and (min-width: $phone-min-width) and (max-width: $phone-max-height) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-height: $desktop-min-height) and (max-height: $desktop-max-height) {
+    @content;
+  }
 }
