@@ -59,6 +59,14 @@
         @include commonStyles.flex();
         height: 70px;
 
+        @include commonStyles.phone() {
+          h2 {
+            margin-left: 5px;
+            margin-right: 5px;
+            font-size: 16px;
+          }
+        }
+
         h2 {
           flex-basis: 100%;
           text-align: center;
@@ -94,6 +102,12 @@
           @include commonStyles.flex(row, flex-start);
           width: 100%;
           flex-wrap: wrap;
+
+          @include commonStyles.phone() {
+            img {
+              margin: auto;
+            }
+          }
         }
 
         .infoColumn {

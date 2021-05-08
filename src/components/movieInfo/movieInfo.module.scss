@@ -18,17 +18,25 @@
 
   .headerRow,
   .subHeaderRow {
-  @include commonStyles.flex(row, space-between);
-  width: 100%;
+    @include commonStyles.flex(row, space-between);
+    width: 100%;
   }
 
   .headerRow {
     align-items: baseline;
+    flex-wrap: wrap;
     line-height: 32px;
   }
 
+  .subHeaderRow {
+    .caption {
+      @include commonStyles.flex();
+      flex-wrap: wrap;
+    }
+  }
+
   .infoContainer {
-  @include commonStyles.flex(column);
+    @include commonStyles.flex(column);
     width: 100%;
   }
 

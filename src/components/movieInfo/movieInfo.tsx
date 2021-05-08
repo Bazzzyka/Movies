@@ -32,7 +32,7 @@ class MovieInfo extends React.Component<{ movieData: IMovieData, isFavorite: boo
             <div>IMDB rating: {rating}</div>
           </div>
           <div className={styles.subHeaderRow}>
-            <div>{genres.join(', ')}</div>
+            <div className={styles.caption}>{genres.join(', ')}</div>
             <Star className={styles.iconVisibility}
               data-favorite={this.props.isFavorite.toString()} 
               onClick={this.favoriteClickHandler}
