@@ -111,6 +111,7 @@ module.exports = function (webpackEnv) {
       {
         loader: require.resolve('css-loader'),
         options: cssOptions,
+        ident: "[name]__[local]___[hash:base64:5]"
       },
       {
         loader: require.resolve('sass-loader')
