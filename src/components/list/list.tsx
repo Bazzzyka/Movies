@@ -1,8 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { IMovieData } from '../movieCard';
+import MovieCard, { IMovieData } from '../movieCard';
 import MovieInfo from '../movieInfo';
 import styles from './list.module.scss';
+
+const initMovieCardData: IMovieData = {
+  id: 0,
+  title: '',
+  year: 0,
+  rating: 0,
+  genres: [],
+  description: '',
+  coverImageSrc: ''
+};
 
 class List extends React.Component<{ moviesData: IMovieData[], isVisible: boolean }> {
   public render() {
@@ -13,6 +23,7 @@ class List extends React.Component<{ moviesData: IMovieData[], isVisible: boolea
               <MovieInfo movieData={movieData} />
             </div>
           })}
+        <MovieCard movieData={initMovieCardData} isVisible={false} closeCard={null} />
       </div>
     );
   }

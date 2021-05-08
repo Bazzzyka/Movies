@@ -15,7 +15,10 @@ const App = () => {
 
   return (
     <div className={`${commonStyles.column} ${appStyles.bodyContainer}`}>
-      <Header onListClick={() => setIsFavoritesVisible(false)} onFavoriteListClick={() => setIsFavoritesVisible(true)} isFavoritesVisible={isFavoritesVisible} />
+      <Header 
+        onListClick={() => setIsFavoritesVisible(false)} 
+        onFavoriteListClick={() => setIsFavoritesVisible(true)} 
+        isFavoritesVisible={isFavoritesVisible} />
       <div className={`${commonStyles.row} ${appStyles.listContainer}`}>
         <List moviesData={DATA} isVisible={!isFavoritesVisible} />
         <FavoriteMovies isVisible={isFavoritesVisible} />

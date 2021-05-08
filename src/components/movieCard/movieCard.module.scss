@@ -1,0 +1,41 @@
+.container {
+  &[data-visible="false"] {
+    display: none;
+  }
+
+  &[data-visible="true"] {
+    display: block;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(90, 90, 90, 0.5);
+
+    .card {
+      position: relative;
+      margin: 5vh 10vw;
+      width: 80wh;
+      height: 90vh;
+      background-color: rgb(43, 49, 68);
+      box-shadow: 0px 0px 20px 2px #c4c4c4; 
+
+      .closeButton {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+        opacity: 0.8;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
