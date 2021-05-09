@@ -25,7 +25,7 @@ class MovieInfo extends React.Component<{ movieData: IMovieData, isFavorite: boo
 
     return (
       <div className={styles.container} onClick={this.props.openCard}>
-        <img src={coverImageSrc} className={styles.img} />
+        <img src={coverImageSrc} className={styles.img} alt="Movie cover" />
         <div className={styles.infoContainer}>
           <div className={styles.headerRow}>
             <h2>{title} ({year})</h2>

@@ -8,4 +8,5 @@
 .listContainer {
   @include commonStyles.flex();
   height: calc(100% - 90px);
+  width: 100%;
 }

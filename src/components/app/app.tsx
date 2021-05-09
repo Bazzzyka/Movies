@@ -37,4 +37,23 @@ const App = () => {
   );
 };
 
+// const loadData = () => {
+//   fetch("https://imdb8.p.rapidapi.com/title/get-full-credits?tconst=tt0786945", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-key": "f89ec78088msh3620820a1e395a3p13f6fejsndfa8870d6cdc",
+// 		"x-rapidapi-host": "imdb8.p.rapidapi.com"
+// 	}
+// })
+// .then(response => {
+//   return response.json();
+// })
+// .then(data => {
+//   debugger
+// 	console.log(data);
+// });
+// }
+
+// loadData();
+
 export default App;

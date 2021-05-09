@@ -1,5 +1,8 @@
-import { createStore } from 'redux';
-// import { IHiddenMovies } from "./reducers/types";
-import reducers from './reducers';
+import loadMovies from './middlware/api';
+import reducer from './reducers';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-export default createStore(reducers);
+// const enhancer = applyMiddleware(loadMovies);
+
+export default createStore(reducer, applyMiddleware(loadMovies));
